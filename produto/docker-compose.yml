@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  db-postgres-produt:
+    image: postgres:alpine
+    ports:
+      - "5434:5432"
+    container_name: "db-postgres-produt"
+    restart: always
+    volumes:
+      - ./banco-de-dados-produt:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: adminpg
+
+volumes:
+ banco-de-dados-produt:
